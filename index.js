@@ -121,9 +121,9 @@ const db = mysql.createConnection({
         }));
         // app.use(express.static('public'));
 
-        // app.get('*', (req, res) => {
-        //     res.sendFile(path.resolve(__dirname__, 'public', 'index.html'))
-        // })
+        app.get('*', (req, res) => {
+            res.sendFile(path.resolve(__dirname__, 'src', 'index.js'))
+        })
 
         app.listen(process.env.PORT || 5000, () => console.log('Server Running'))
 
