@@ -124,7 +124,7 @@ const db = mysql.createConnection({
             schema: schema,
             graphiql: true
         }))
-        app.listen(5000, () => console.log('Server Running'))
+        app.listen(80, () => console.log('Server Running'))
 
     }
 

@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 import {Container, Row, Col} from 'reactstrap';
 
 const client = new ApolloClient({
-  uri: "http://localhost:5000/graphql"
+  uri: "/graphql"
 });
 
 class App extends Component {
