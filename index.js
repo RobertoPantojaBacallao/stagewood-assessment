@@ -119,10 +119,10 @@ const db = mysql.createConnection({
             schema: schema,
             graphiql: true
         }));
-        // app.use(express.static('public'));
+        app.use(express.static('public'));
 
         app.get('*', (req, res) => {
-            res.sendFile(path.resolve(__dirname__, 'src', 'index.js'))
+            res.sendFile(path.resolve(__dirname__, 'public', 'index.html'))
         })
 
         app.listen(process.env.PORT || 5000, () => console.log('Server Running'))
