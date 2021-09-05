@@ -125,6 +125,8 @@ const db = mysql.createConnection({
             res.sendFile(path.resolve(__dirname__, 'public', 'index.html'))
         })
 
+        console.log(process.env.PORT)
+
         app.listen(process.env.PORT || 5000, () => console.log('Server Running'))
 
     }
