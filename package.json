@@ -31,7 +31,7 @@
   },
   "scripts": {
     "start": "concurrently \"nodemon index.js\" \"react-scripts start\"",
-    "build": "react-scripts build && mv build ../public",
+    "build": "react-scripts build && move build ./public",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "server": "nodemon index.js"

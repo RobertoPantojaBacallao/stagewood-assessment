@@ -119,6 +119,7 @@ const db = mysql.createConnection({
             schema: schema,
             graphiql: true
         }));
+        
         app.use(express.static('public'));
 
         app.get('*', (req, res) => {
