@@ -8,6 +8,7 @@ const {
     GraphQLString,
     GraphQLList
 } = require('graphql')
+const path = require('path')
 
 const app = express()
 const db = mysql.createConnection({
@@ -90,12 +91,6 @@ const db = mysql.createConnection({
                     break;
             }
             startDate[i] = date[3] + '/' + date[1] + '/' + date[2]
-            // for (e in String(rows[i].startDate).substr(0,15).split(' ')){
-            //     if(startDate[i] != undefined )
-            //         startDate[i] += String(rows[i].startDate).substr(0,15).split(' ')[3-e] + ' '
-            //     else
-            //     startDate[i] = String(rows[i].startDate).substr(0,15).split(' ')[3-e] + ' '
-            // }
         }
 
         const schema = new GraphQLSchema({
@@ -123,8 +118,14 @@ const db = mysql.createConnection({
         app.use('/graphql', graphqlHTTP({
             schema: schema,
             graphiql: true
-        }))
-        app.listen(80, () => console.log('Server Running'))
+        }));
+        app.use(express.static('public'));
+
+        app.get('*', (req, res) => {
+            res.sendFile(path.resolve(__dirname__, 'public', 'index.js'))
+        })
+
+        app.listen(process.env.PORT || 5000, () => console.log('Server Running'))
 
     }
 

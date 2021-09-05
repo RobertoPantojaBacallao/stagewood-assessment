@@ -2,6 +2,7 @@
   "name": "final",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:5000",
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
@@ -29,8 +30,8 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "start": "concurrently \"npm run server\" \"react-scripts start\"",
-    "build": "react-scripts build",
+    "start": "concurrently \"nodemon index.js\" \"react-scripts start\"",
+    "build": "react-scripts build && mv build ../public",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "server": "nodemon index.js"

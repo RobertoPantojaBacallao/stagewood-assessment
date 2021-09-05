@@ -6,17 +6,14 @@ import Event from './Event';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter as Router,Route,
   Redirect,Switch} from 'react-router-dom';
-// import './../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 ReactDOM.render(
-  // <React.StrictMode>
     <Router>
         <Switch>
            <Route path="/" exact component = {App} />
            <Route path="/event" exact component={Event} />
         </Switch>
     </Router>,
-  // </React.StrictMode>,
   document.getElementById('root')
 );
 
