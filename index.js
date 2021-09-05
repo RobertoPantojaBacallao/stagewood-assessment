@@ -119,11 +119,11 @@ const db = mysql.createConnection({
             schema: schema,
             graphiql: true
         }));
-        
+
         app.use(express.static('public'));
 
         app.get('*', (req, res) => {
-            res.sendFile(path.resolve(__dirname__, 'public', 'index.html'))
+            res.sendFile(path.resolve(__dirname__, 'public', 'build', 'index.html'))
         })
 
         console.log(process.env.PORT)
